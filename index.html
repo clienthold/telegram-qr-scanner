@@ -10,13 +10,13 @@
     <script>
         let App = window.Telegram.WebApp;
 
-        function showScanQrPopup(linksOnly) {
+        function showScanQrPopup() {
             window.Telegram.WebApp.showScanQrPopup({
-                text: linksOnly ? "with any link" : "LOLZPAY"
+                text: "LOLZPAY"
             }, function (text) {
                 const lower = text.toString().toLowerCase();
                 if (lower.startsWith("http://") || lower.startsWith("https://")) {
-                    window.Telegram.WebApp.sendData("test");
+                    window.Telegram.WebApp.sendData(lower);
                     return true;
                 }
             });
