@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,7 @@
         let App = window.Telegram.WebApp;
 
         function showScanQrPopup() {
-            window.Telegram.WebApp.showScanQrPopup({
-                text: "LOLZPAY"
-            }, function (text) {
+            window.Telegram.WebApp.showScanQrPopup({}, function (text) {
                 const lower = text.toString().toLowerCase();
                 if (lower.startsWith("http://") || lower.startsWith("https://")) {
                     window.Telegram.WebApp.sendData(text.toString());
